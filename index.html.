@@ -1,1 +1,63 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIGUEL HUB KEY SYSTEM</title>
+<style>
+body {
+  background: #0b0b0f;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.card {
+  background: #17171f;
+  border: 1px solid #e32636;
+  border-radius: 18px;
+  padding: 28px;
+  width: 290px;
+  text-align: center;
+}
+h1 { color: #ff3548; }
+button {
+  background: #e32636;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 14px;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 15px;
+}
+#msg { color: #aaa; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>MIGUEL HUB</h1>
+  <p>KEY SYSTEM</p>
+  <p>Obtenha sua chave para continuar.</p>
+  <button onclick="copiar()">📋 Copiar Key</button>
+  <p id="msg"></p>
+</div>
+<script>
+async function copiar() {
+  const key = "MIGUEL-2026";
+  try {
+    await navigator.clipboard.writeText(key);
+    document.getElementById("msg").textContent =
+      "Key copiada! Volte ao script.";
+  } catch {
+    document.getElementById("msg").textContent =
+      "Copie manualmente: " + key;
+  }
+}
+</script>
+</body>
+</html>
